@@ -1,2 +1,2 @@
 # lpic-practice
-LPIC練習用コマンド入力プログラム
+LPIC練習用コマンド入力プログラム_sample
