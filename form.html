@@ -1,0 +1,19 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>sample</title>
+</head>
+<body>
+<form action="regist.php" method="post">
+  下記コマンドを入力してください。<br />
+<?php
+$i =1;
+$p1 = array("cd","pwd","ls","cat","apt-get"); //コマンド入力管理配列初期化
+echo 'コマンド:'.$p1[$i]."<br />\n";
+$i++;
+?>
+  <input type="text" name="command" size="30" value="" /><br />
+  <input type="submit" value="入力情報送信" />
+</form>
+</body>
+</html>
