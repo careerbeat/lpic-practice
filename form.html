@@ -9,16 +9,18 @@
 <?php
 session_start();
    if(!isset($_SESSION['i'])){
-       $_SESSION['i'] = 1;
+       $_SESSION['i'] = 0;
     }else{
           $i = $_SESSION['i'];
-          if($i >= 5){
-           $i = 0;
+          if($_SESSION['hairetudayo'][$i] == 0){
+              $i++;
           }
-          $i++;
+          if($i >= 5){
+               $i = 0;
+          }
           $_SESSION['i'] = $i;
     }
-$p1 = array("","cd","pwd","ls","cat","apt-get"); //コマンド入力管理配列初期化
+$p1 = array("cd","pwd","ls","cat","apt-get"); //コマンド入力管理配列初期化
 echo 'コマンド:'.$p1[$i]."<br />\n";
 ?>
   <input type="text" name="command" size="30" value="" /><br />
