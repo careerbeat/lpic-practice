@@ -7,10 +7,19 @@
 <form action="regist.php" method="post">
   下記コマンドを入力してください。<br />
 <?php
-$i =1;
-$p1 = array("cd","pwd","ls","cat","apt-get"); //コマンド入力管理配列初期化
+session_start();
+   if(!isset($_SESSION['i'])){
+       $_SESSION['i'] = 1;
+    }else{
+          $i = $_SESSION['i'];
+          if($i >= 5){
+           $i = 0;
+          }
+          $i++;
+          $_SESSION['i'] = $i;
+    }
+$p1 = array("","cd","pwd","ls","cat","apt-get"); //コマンド入力管理配列初期化
 echo 'コマンド:'.$p1[$i]."<br />\n";
-$i++;
 ?>
   <input type="text" name="command" size="30" value="" /><br />
   <input type="submit" value="入力情報送信" />

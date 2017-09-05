@@ -1,30 +1,64 @@
 <?php
+
+$p1 = array("","cd","pwd","ls","cat","apt-get"); //コマンド入力管理配列初期化
+session_start();
+$u = $_SESSION['i'];
+
+$question_cd = array('ディレクトリを移動する','ファイルを削除する','CDを作成する','管理者権限を変更する'); //4択の選択肢を設定
+$question_pwd = array('現在のディレクトリの場所を確認する','ディレクトリを移動する','ディレクトリを作成する','管理者権限を変更する'); //4択の選択肢を設定
+$question_ls = array('現在のディレクトリのファイルとディレクトリを表示','ファイルを削除する','LinuxServerを起動する','何も起こらない'); //4択の選択肢を設定
+$question_cat = array('ファイルの中身を見る','猫が表示される','ディレクトリの中身が表示される','そんなコマンドはない'); //4択の選択肢を設定
+$question_apt_get = array('パッケージの取得','ProxyServerを起動する','エラーログを表示する','管理者権限を変更する'); //4択の選択肢を設定
+
+switch ($u) {
+    case 0:
+        $question = $question_cd;
+        break;
+    case 1:
+        $question = $question_cd;
+        break;
+    case 2:
+        $question = $question_pwd;
+        break;
+    case 3:
+        $question = $question_ls;
+        break;
+    case 4:
+        $question = $question_cat;
+        break;
+    case 5:
+        $question = $question_apt_get;
+        break;
+}
+
+$answer_cd = $question_cd[0]; //正解の問題を設定
+$answer_pwd = $question_pwd[0]; //正解の問題を設定
+$answer_ls = $question_ls[0]; //正解の問題を設定
+$answer_cat = $question_cat[0]; //正解の問題を設定
+$answer_apt_get = $question_apt_get[0]; //正解の問題を設定
  
-$title = '�X�}�u���ɎQ�킵�Ă���|�P�����͂ǂ�H';
- 
-$question = array(); //���̕ϐ��͔z��ł���Ƃ����錾
-$question = array('���U�[�h��','�J���b�N�X','�t�V�M�o�i','�J�r�S��'); //4���̑I������ݒ�
- 
-$answer = $question[0]; //�����̖���ݒ�
- 
-shuffle($question); //�z��̒��g���V���b�t��
- 
+shuffle($question_cd); //配列の中身をシャッフル
+shuffle($question_pwd); //配列の中身をシャッフル
+shuffle($question_ls); //配列の中身をシャッフル
+shuffle($question_cat); //配列の中身をシャッフル
+shuffle($question_apt_get); //配列の中身をシャッフル
+
 ?>
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>�ȈՃN�C�Y�v���O����</title>
+<title>簡易クイズプログラム</title>
 </head>
 <body>
  
-<h2><?php echo $title ?></h2>
+<h2><?php echo 'コマンド:'.$p1[$u].'の説明はどれ？' ?></h2>
 <form method="POST" action="answer.php">
    <?php foreach($question as $value){ ?>
    <input type="radio" name="question" value="<?php echo $value; ?>" /> <?php echo $value; ?><br>
    <?php } ?>
    <input type="hidden" name="answer" value="<?php echo $answer ?>">
-   <input type="submit" value="�񓚂���">
+   <input type="submit" value="回答する">
 </form>
  
 </body>

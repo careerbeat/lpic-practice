@@ -1,15 +1,17 @@
 <?php
  
 //answer.php
- 
+
 $question = $_POST['question']; //ラジオボタンの内容を受け取る
 $answer = $_POST['answer'];   //hiddenで送られた正解を受け取る
  
 //結果の判定
 if($question == $answer){
-	$result = "正解！";
+        require "config.php";
+        $i = $i +1;
+        header("Location:form.html");
 }else{
-	$result = "不正解･･･";
+        header("Location:form.html");
 }
  
 ?>
