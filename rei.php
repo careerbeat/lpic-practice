@@ -1,6 +1,7 @@
 <?php
 include 'header.php';
-$p1 = array("cd","pwd","ls","cat","apt-get"); //コマンド入力管理配列初期化
+include 'constants.php';
+
 $u = $_SESSION['i'];
 
 $question_cd = array('ディレクトリを移動する','ファイルを削除する','CDを作成する','管理者権限を変更する'); //4択の選択肢を設定
@@ -49,7 +50,7 @@ shuffle($question); //配列の中身をシャッフル
 </head>
 <body>
  
-<h2><?php echo 'コマンド:'.$p1[$u].'の説明はどれ？' ?></h2>
+<h2><?php echo 'コマンド:'.$commands[$u].'の説明はどれ？' ?></h2>
 <form method="POST" action="answer.php">
    <?php foreach($question as $value){ ?>
    <input type="radio" name="question" value="<?php echo $value; ?>" /> <?php echo $value; ?><br>

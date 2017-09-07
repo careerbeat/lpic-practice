@@ -1,13 +1,13 @@
 <?php
 include 'header.php';
+include 'constants.php';
 ?>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
-$p1 = array("cd","pwd","ls","cat","apt-get"); //コマンド入力管理配列初期化
 $u = $_SESSION['i'];
-if ($_POST['command'] === $p1[$u])
+if ($_POST['command'] === $commands[$u])
 {
 header("Location: rei.php");
 }

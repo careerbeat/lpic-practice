@@ -1,5 +1,6 @@
 <?php
 include 'header.php';
+include 'constants.php';
 
 //answer.php
 $u = $_SESSION['i'];

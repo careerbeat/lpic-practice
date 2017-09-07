@@ -3,7 +3,7 @@
 $title = 'Linuxコマンドテスト';
  
 $mistake = array(); //正解フラグ管理配列
-$p1 = array(); //コマンド入力管理配列
+$commands = array(); //コマンド入力管理配列
 $p2t = array(); //コマンド説明管理配列行
 $p2w = array(); //コマンド説明管理配列列
 $p2 = array(); //コマンド説明管理配列
@@ -13,7 +13,7 @@ $STDIN = file_get_contents('php://stdin');
 $q = 0;
 $i = 0;
 $mistake = array(1,1,1,1,1); //正解フラグ初期化
-$p1 = array("cd","pwd","ls","cat","apt-get"); //コマンド入力管理配列初期化
+$commands = array("cd","pwd","ls","cat","apt-get"); //コマンド入力管理配列初期化
 $p2t = array(0,1,2,3,4); //コマンド説明管理配列行
 $p2w = array(0,1,2,3); //コマンド説明管理配列列
 $p2 = array($p2t,$p2w); //コマンド説明管理配列初期化
@@ -48,7 +48,7 @@ if($mistake[$i] == 1){
 
     echo '下記コマンドを入力せよ';
 	echo nl2br("\n"); //<br />タグが挿入される。
-	$o = $p1[$i];
+	$o = $commands[$i];
     echo 'コマンド';
 	print $o ;
 
@@ -56,11 +56,11 @@ if($mistake[$i] == 1){
 	echo "input=$line\n";
 
     $input = 1;
-     if($input === $p1[$i]){
+     if($input === $commands[$i]){
  
-    echo 'コマンド{$p1[i]}の意味を選べ';
+    echo 'コマンド{$commands[i]}の意味を選べ';
 	echo nl2br("\n"); //<br />タグが挿入される。
-        if($input === $p1[$i]){
+        if($input === $commands[$i]){
             $mistake[$i] = 0;
 	    }
          else{

@@ -1,5 +1,6 @@
 <?php
 include 'header.php';
+include 'constants.php';
 ?>
 <html>
 <head>
@@ -22,8 +23,8 @@ include 'header.php';
           }
           $_SESSION['i'] = $i;
     }
-$p1 = array("cd","pwd","ls","cat","apt-get"); //コマンド入力管理配列初期化
-echo 'コマンド:'.$p1[$i]."<br />\n";
+
+echo 'コマンド:'.$commands[$i]."<br />\n";
 ?>
   <input type="text" name="command" size="30" value="" /><br />
   <input type="submit" value="入力情報送信" />
