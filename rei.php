@@ -1,7 +1,6 @@
 <?php
-
+include 'call_session_start.php';
 $p1 = array("cd","pwd","ls","cat","apt-get"); //コマンド入力管理配列初期化
-session_start();
 $u = $_SESSION['i'];
 
 $question_cd = array('ディレクトリを移動する','ファイルを削除する','CDを作成する','管理者権限を変更する'); //4択の選択肢を設定

@@ -1,7 +1,7 @@
 <?php
- 
+include 'call_session_start.php';
+
 //answer.php
-session_start();
 $u = $_SESSION['i'];
 $_SESSION['i'];
 $hairetu = array('1','1','1','1','1');
