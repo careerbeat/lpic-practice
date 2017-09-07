@@ -28,7 +28,7 @@ if($question == $answer){
     }
     if($f == 1){
         print_r($hairetu);
-        header("Location:form.html");
+        header("Location:form.php");
     }else{
         echo "FINISH";
             $f = 0;
@@ -38,7 +38,7 @@ if($question == $answer){
     echo "$question";
     echo "$answer";
     $_SESSION['hairetudayo'] = $hairetu;
-        header("Location:form.html");
+        header("Location:form.php");
 }
  
 ?>
