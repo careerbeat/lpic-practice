@@ -1,5 +1,5 @@
 <?php
-include 'call_session_start.php';
+include 'header.php';
 $p1 = array("cd","pwd","ls","cat","apt-get"); //コマンド入力管理配列初期化
 $u = $_SESSION['i'];
 
