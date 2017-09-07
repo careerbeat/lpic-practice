@@ -1,3 +1,6 @@
+<?php
+include 'call_session_start.php';
+?>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -7,7 +10,6 @@
 <form action="regist.php" method="post">
   下記コマンドを入力してください。<br />
 <?php
-session_start();
    if(!isset($_SESSION['i'])){
        $_SESSION['i'] = 0;
     }else{
